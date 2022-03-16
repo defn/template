@@ -24,8 +24,11 @@ development:
     poetry shell
     poetry install
     pytest
+    poetry run defn-template
     defn-template
 
 build/publish:
     poetry build
     poetry publish
+    pipx install defn-template
+    defn-template
