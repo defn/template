@@ -1,0 +1,31 @@
+defn/dev:
+    install poetry: pipx install --pip-args "keyring_pass" poetry
+    echo -n token | pass insert -e -f python-keyring/poetry-repository-pypi/__token__
+    keyringrc.cfg:
+    [backend]
+    default-keyring=keyring_pass.PasswordStoreBackend
+
+pre-commit:
+
+initialize python project:
+    poetry new: poetry new defn-template
+    rm -f README.rst
+    ignore dist __pycache__
+
+source(cli):
+    [tool.poetry.scripts]
+    defn-template = "defn_template.cli:main"
+
+    $ cat defn_template/cli.py
+    def main():
+        print("hello")
+
+development:
+    poetry shell
+    poetry install
+    pytest
+    defn-template
+
+build/publish:
+    poetry build
+    poetry publish
