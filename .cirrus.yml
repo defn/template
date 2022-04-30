@@ -1,6 +1,7 @@
+container:
+  image: defn/dev:ci
+
 python_task:
-  container:
-    image: defn/dev:ci
   script: |
     set -efu
     chown -R ubuntu:ubuntu /tmp/cirrus-ci/working-dir
