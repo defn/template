@@ -5,6 +5,6 @@ python_task:
   script: |
     set -efu
     echo 1
-    chown -R ubuntu:ubuntu /tmp/cirrus-ci/working-dir
-    git config --global --add safe.directory /tmp/cirrus-ci/working-dir
+    chown -R ubuntu:ubuntu "${CIRRUS_WORKING_DIR}"
+    git config --global --add safe.directory "${CIRRUS_WORKING_DIR}"
     sudo -E -u ubuntu ~ubuntu/bin/e ./ci/python.sh
