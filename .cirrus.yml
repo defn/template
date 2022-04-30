@@ -4,6 +4,7 @@ container:
 python_task:
   script: |
     set -efu
+    echo 1
     chown -R ubuntu:ubuntu /tmp/cirrus-ci/working-dir
     git config --global --add safe.directory /tmp/cirrus-ci/working-dir
     sudo -E -u ubuntu ~ubuntu/bin/e ./ci/python.sh
