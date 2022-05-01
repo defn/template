@@ -8,7 +8,6 @@ on:
 
 jobs:
   cirrus:
-    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
       - uses: cirruslabs/cirrus-action@v2
