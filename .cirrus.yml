@@ -7,6 +7,10 @@ precommit_task:
     sudo -E -u ubuntu ~ubuntu/bin/e ./ci/precommit.sh
 
 golang_task:
+  modules_cache:
+    fingerprint_script: cat go.sum
+    folder: $GOPATH/pkg/mod
+  get_script: go get ./...
   script: |
     chown -R ubuntu:ubuntu "${CIRRUS_WORKING_DIR}"
     sudo -E -u ubuntu ~ubuntu/bin/e ./ci/golang.sh
