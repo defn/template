@@ -16,16 +16,16 @@ func main() {
 	flag.Parse()
 
 	if *port == -1 {
-		 err := gateway.ListenAndServe(":3000", adaptor.FiberApp(routing()))
-		 if err != nil {
+		err := gateway.ListenAndServe(":3000", adaptor.FiberApp(routing()))
+		if err != nil {
 			log.Fatal(err)
-		 }
+		}
 	} else {
 		portStr := fmt.Sprintf(":%d", *port)
 		err := routing().Listen(portStr)
-		 if err != nil {
+		if err != nil {
 			log.Fatal(err)
-		 }
+		}
 	}
 }
 
