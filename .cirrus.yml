@@ -14,6 +14,9 @@ golang_task:
   build_script: env GOPATH=${CIRRUS_WORKING_DIR}/go ~/bin/e go build ./...
 
 python_task:
+  modules_cache:
+    fingerprint_script: python --version
+    folder: ~/.cache/pip
   script: |
     chown -R ubuntu:ubuntu "${CIRRUS_WORKING_DIR}"
     sudo -E -u ubuntu ~ubuntu/bin/e ./ci/python.sh
