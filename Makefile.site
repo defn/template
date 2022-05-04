@@ -1,3 +1,4 @@
 test:
 	cd "$(shell pwd -P)" && cirrus run --container-lazy-pull --output simple
 	rm -f .test
+	git push
