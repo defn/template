@@ -2,4 +2,4 @@ test:
 	cd "$(shell pwd -P)" && if ! cirrus run --container-lazy-pull --output simple; then figlet failed | /usr/games/lolcat; false; fi
 	rm -f .test
 	git push
-	@figlet succeess | /usr/games/lolcat
+	@figlet success | /usr/games/lolcat
