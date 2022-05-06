@@ -9,7 +9,7 @@ deps:
 
 build:
     FROM +deps
-    SAVE ARTIFACT poetry.lock poetry_lock
+    SAVE ARTIFACT ./poetry.lock poetry_lock
 
 meh:
     COPY +build/poetry.lock src
