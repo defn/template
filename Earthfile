@@ -11,6 +11,5 @@ build:
     FROM +deps
 
 meh:
-    COPY +build/poetry.lock src
     ENTRYPOINT ["python", "./src/hello.py"]
     SAVE IMAGE meh
