@@ -1,4 +1,5 @@
 test:
+	pre-commit
 	cd "$(shell pwd -P)" && if ! cirrus run --container-lazy-pull --output simple; then figlet failed | /usr/games/lolcat; false; fi
 	cd "$(shell pwd -P)" && if ! earthly +mehthen figlet failed | /usr/games/lolcat; false; fi
 	rm -f .test
