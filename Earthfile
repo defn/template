@@ -4,6 +4,7 @@ FROM defn/dev:ci
 WORKDIR /workspaces
 
 deps:
+    COPY . .
     RUN ~/bin/e poetry install
 
 build:
