@@ -12,6 +12,6 @@ build:
     SAVE ARTIFACT poetry_lock poetry.lock
 
 meh:
-    COPY +build/poetry_lock src
+    COPY +build/poetry.lock src
     ENTRYPOINT ["python", "./src/hello.py"]
     SAVE IMAGE meh
