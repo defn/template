@@ -12,4 +12,4 @@ build:
 
 meh:
     ENTRYPOINT ["python", "./src/hello.py"]
-    SAVE IMAGE meh
+    SAVE IMAGE feh
