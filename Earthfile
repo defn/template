@@ -1,15 +1,15 @@
-
 VERSION 0.6
-FROM defn/dev:ci
+
+FROM ubuntu:22.04
+
 WORKDIR /workspaces
 
 deps:
     COPY . .
-    RUN ~/bin/e poetry install
 
 build:
     FROM +deps
 
 meh:
-    ENTRYPOINT ["python", "./src/hello.py"]
+    ENTRYPOINT ["sleep", "10"]
     SAVE IMAGE feh

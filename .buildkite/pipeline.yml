@@ -3,3 +3,4 @@ steps:
   - command: "id -a"
   - command: "ps axuf"
   - command: "df -klh"
+  - command: "earthly +meh"
