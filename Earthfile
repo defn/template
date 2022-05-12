@@ -4,10 +4,11 @@ build:
     FROM registry.fly.io/defn:dev-tower
     COPY hello.go .
     RUN ~/bin/e go build hello.go
-    SAVE ARTIFACT hello AS LOCAL hello
+    SAVE ARTIFACT hello
 
-hello:
+image:
     FROM scratch
     COPY +build/hello /
     ENTRYPOINT ["/hello"]
+    SAVE ARTIFACT /hello AS LOCAL hello
     SAVE IMAGE hello

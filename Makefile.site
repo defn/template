@@ -1,6 +1,3 @@
 test:
 	pre-commit
-	cd "$(shell pwd -P)" && if ! earthly +meh; then figlet failed | /usr/games/lolcat; false; fi
-	rm -f .test
-	git push
-	@figlet success | /usr/games/lolcat
+	earthly +image
