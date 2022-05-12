@@ -1,15 +1,13 @@
 VERSION 0.6
 
-FROM ubuntu:22.04
-
-WORKDIR /workspaces
-
-deps:
-    COPY . .
-
 build:
-    FROM +deps
+    FROM registry.fly.io/defn:dev-tower
+    COPY hello.go .
+    RUN ~/bin/e go build hello.go
+    SAVE ARTIFACT hello
 
-meh:
-    ENTRYPOINT ["sleep", "10"]
-    SAVE IMAGE feh
+hello:
+    FROM scratch
+    COPY +build/hello /
+    ENTRYPOINT ["/hello"]
+    SAVE IMAGE hello
