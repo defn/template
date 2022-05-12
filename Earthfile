@@ -4,7 +4,7 @@ build:
     FROM registry.fly.io/defn:dev-tower
     COPY hello.go .
     RUN ~/bin/e go build hello.go
-    SAVE ARTIFACT hello
+    SAVE ARTIFACT hello AS LOCAL hello
 
 hello:
     FROM scratch
