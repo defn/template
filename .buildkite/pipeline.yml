@@ -5,4 +5,4 @@ steps:
   - command: "df -klh"
   - command: "ifconfig -a"
   - command: "pwd"
-  - command: "env DOCKER_HOST=brie.tiger-mamba.ts.net:2375 earthly +meh"
+  - command: "earthly +meh"
