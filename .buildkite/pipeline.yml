@@ -5,4 +5,4 @@ steps:
   - command: "df -klh"
   - command: "ifconfig -a"
   - command: "pwd"
-  - command: "earthly +meh"
+  - command: "env DOCKER_HOST=localhost:2375 earthly +meh"
