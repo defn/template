@@ -1,2 +1,1 @@
-test:
-	pre-commit
+SHELL := /bin/bash
